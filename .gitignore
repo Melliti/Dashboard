@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+/back
+/front
+/server/node_modules
