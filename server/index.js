@@ -1,24 +1,30 @@
 const express = require('express');
 const cors = require('cors');
-const connection = require('./sql').connection;
+const url = require('url')
 const footballTeams = require('./footballWidget').footballTeams;
 
 const app = express();
 
-const ALL_MESSAGE = "SELECT * FROM posts";
+//const ALL_MESSAGE = "SELECT * FROM posts";
 
 app.use(cors());
 
-app.get('/posts', (req, res) => {
-    connection.query(ALL_MESSAGE, (err, results) => {
-        if (err)
-            return res.send(err);
-        else
-            return res.json({
-                data: results
-            });
+app.get('/teams', (req, res) => {
+        return res.json({
+        data: footballTeams.responseContent.body.teams
+
     });
-    console.log(footballTeams);
+});
+
+app.get('/teams/:id', (req, res) => {
+    console.log("hello")
+    console.log(url.parse(req.url).pathname);
+    console.log(req.param.id);
+//        return res.json({
+//        data: footballTeams.responseContent.body.teams
+
+//    });
+return res.json("Hello clients");
 });
 
 app.listen(4000, () => {
