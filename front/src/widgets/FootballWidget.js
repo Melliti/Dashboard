@@ -15,8 +15,8 @@ class FootballWidget extends Component {
         console.log("getteams")
         fetch("http://localhost:4000/teams")
         .then(response => response.json())
-        .then(response => this.setState({ teams: response.data }))
-        //.then(response => console.log(response))
+        //.then(response => this.setState({ teams: response.data }))
+        .then(response => console.log(response))
         .catch(err => console.error(err))
     }
 
@@ -27,7 +27,8 @@ class FootballWidget extends Component {
 
         fetch("http://localhost:4000/teams/" + league.league)
         .then(response => response.json())
-        .then(response =>  this.setState({ teams: response.data }))
+        .then(response => console.log(response))
+        //.then(response =>  this.setState({ teams: response.data }))
         .catch(err => console.error(err))
     }
 

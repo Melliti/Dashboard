@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const footballTeams = require('./footballWidget');
-const request = require("request")
 
 const app = express();
 

@@ -17,5 +17,3 @@ module.exports = {
             });
     }
 }
-
-//exports.footballTeams = data;
