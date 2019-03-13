@@ -13,6 +13,7 @@ class Widgets extends Component {
     render() {
         return (
             <div>
+                <Nav />
                 <FootballWidget />
             </div>
         );
