@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FootballWidget from './FootballWidget';
 
-
 class Widgets extends Component {
 
     state = {
@@ -13,7 +12,6 @@ class Widgets extends Component {
     render() {
         return (
             <div>
-                <Nav />
                 <FootballWidget />
             </div>
         );

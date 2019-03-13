@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import logo from './dlogo.png'
 
-class App extends Component {
+class Nav extends Component {
     state = {
 
     }
@@ -11,7 +12,16 @@ class App extends Component {
 
     render () {
         return (
-            <div></div>
+            <div>
+                <nav className="navbar navbar-light bg-light">
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
+                        <b>ASHBOARD</b>
+                    </a>
+                </nav>
+            </div>
         )
     }
 }
+
+export default Nav
