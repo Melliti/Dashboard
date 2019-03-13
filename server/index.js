@@ -1,30 +1,24 @@
 const express = require('express');
 const cors = require('cors');
-const url = require('url')
-const footballTeams = require('./footballWidget').footballTeams;
+const footballTeams = require('./footballWidget');
+const request = require("request")
 
 const app = express();
 
-//const ALL_MESSAGE = "SELECT * FROM posts";
-
 app.use(cors());
 
-app.get('/teams', (req, res) => {
-        return res.json({
-        data: footballTeams.responseContent.body.teams
-
+app.get('/teams', async (req, res) => {
+    const data = await footballTeams.makeRequest("FL1")
+    return res.json({
+        data: data.teams
     });
 });
 
-app.get('/teams/:id', (req, res) => {
-    console.log("hello")
-    console.log(url.parse(req.url).pathname);
-    console.log(req.param.id);
-//        return res.json({
-//        data: footballTeams.responseContent.body.teams
-
-//    });
-return res.json("Hello clients");
+app.get('/teams/:id', async (req, res) => {
+    const data = await footballTeams.makeRequest(req.params.id)
+    return res.json({
+    data: data.teams
+    });
 });
 
 app.listen(4000, () => {

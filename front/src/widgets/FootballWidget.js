@@ -12,19 +12,22 @@ class FootballWidget extends Component {
     }
 
     getTeams = _ => {
+        console.log("getteams")
         fetch("http://localhost:4000/teams")
         .then(response => response.json())
         .then(response => this.setState({ teams: response.data }))
+        //.then(response => console.log(response))
         .catch(err => console.error(err))
     }
 
     setLeague()
     {
         const { teams, league } = this.state;
-        console.log(league);
+
+
         fetch("http://localhost:4000/teams/" + league.league)
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(response =>  this.setState({ teams: response.data }))
         .catch(err => console.error(err))
     }
 
@@ -34,8 +37,8 @@ class FootballWidget extends Component {
         const { teams, league } = this.state;
         return (
             <div>
-              { teams.map(this.renderContent) }
-
+                {/* {console.log(typeof(teams))} */}
+                { teams.map(this.renderContent) }
                     <div className="form-group col-md-2">
                         <label>Choose a league</label>
                         <select 

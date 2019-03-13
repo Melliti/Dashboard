@@ -1,17 +1,21 @@
 const request = require('request');
+const rp = require('request-promise')
 
 _URL_API = "http://api.football-data.org/v2/competitions/FL1/teams";
 
-const data = request({
-    headers: {
-        'X-Auth-Token': 'de2e972917ec4def8902cb05ac8e7c3b'
-        },
-        json: true,
-        uri: _URL_API,
-    }, (err, res, body) => {});
 
-makeRequest = league => {
-    console.log(league);
+
+module.exports = {
+    makeRequest: function(param)  {
+        console.log(param);
+        return rp({
+            uri: "http://api.football-data.org/v2/competitions/" + param + "/teams",
+            headers: {
+                'X-Auth-Token': 'de2e972917ec4def8902cb05ac8e7c3b'
+                },
+            json: true,
+            });
+    }
 }
 
-exports.footballTeams = data;
+//exports.footballTeams = data;
