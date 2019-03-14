@@ -2,8 +2,22 @@
     width: 30px;
     height: auto;
     margin-right: 5px;
+    margin-left: 5px;
 }
 
 .clubInfo {
     margin-top: 5px;
+    overflow: auto;
+}
+
+.widget {
+    height: 300px;
+}
+.clubList {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.selectCaption {
+    float: left;
 }
