@@ -21,7 +21,7 @@ class FootballWidget extends Component {
 
     setLeague()
     {
-        const { teams, league } = this.state;
+        const { league } = this.state;
 
 
         fetch("http://localhost:4000/teams/" + league.league)
@@ -36,20 +36,18 @@ class FootballWidget extends Component {
         const { teams, league } = this.state;
         return (
             <div>
-                {/* {console.log(typeof(teams))} */}
                 { teams.map(this.renderContent) }
                     <div className="form-group col-md-2">
                         <label>Choose a league</label>
                         <select 
                             className="form-control" 
                             id="selector" 
-                            value={league} 
                             onChange={e => this.setState({ league: {...teams, league: e.target.value}})}>
-                            <option>FL1</option>
-                            <option>PL</option>
-                            <option>BL1</option>
-                            <option>SA</option>
-                            <option>PD</option>
+                            <option value="FL1">FL1</option>
+                            <option value="PL">PL</option>
+                            <option value="BL1">BL1</option>
+                            <option value="SA">SA</option>
+                            <option value="PD">PD</option>
                         </select>
                     </div>
                     <button className="btn btn-primary" onClick={e => this.setLeague(e.target.value)}>Submit</button>
