@@ -7,7 +7,6 @@ _URL_API = "http://api.football-data.org/v2/competitions/FL1/teams";
 
 module.exports = {
     makeRequest: function(param)  {
-        console.log(param);
         return rp({
             uri: "http://api.football-data.org/v2/competitions/" + param + "/teams",
             headers: {

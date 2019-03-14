@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../style.css';
 
 class FootballWidget extends Component {
 
@@ -9,6 +10,7 @@ class FootballWidget extends Component {
 
     componentDidMount() {
         this.getTeams();
+        
     }
 
     getTeams = _ => {
@@ -23,14 +25,13 @@ class FootballWidget extends Component {
     {
         const { league } = this.state;
 
-
         fetch("http://localhost:4000/teams/" + league.league)
         .then(response => response.json())
         .then(response =>  this.setState({ teams: response.data }))
         .catch(err => console.error(err))
     }
 
-    renderContent = ({ id, shortName }) => <div key={id}>{shortName}</div>
+    renderContent = ({ id, crestUrl, shortName }) => <div key={id} className="clubInfo"><img src={crestUrl} className="clubLogo"/>{shortName}</div>
 
     render() {
         const { teams, league } = this.state;
@@ -40,7 +41,7 @@ class FootballWidget extends Component {
                     <div className="form-group col-md-8">
                         <label>Choose a league</label>
                         <select 
-                            className="form-control" 
+                            className="form-control"
                             id="selector" 
                             onChange={e => this.setState({ league: {...teams, league: e.target.value}})}>
                             <option value="FL1">Ligue 1</option>
