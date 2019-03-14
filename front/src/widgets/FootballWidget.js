@@ -42,7 +42,7 @@ class FootballWidget extends Component {
                 </div>
                 <div 
                     className="form-group col-md-12" 
-                    style={{paddingLeft: 0, marginTop: 5, marginBottom: 5}}>
+                    style={{marginTop: 5, marginBottom: 5}}>
                     <label 
                         htmlFor="league" 
                         className="col-sm-5 pull-right" 
