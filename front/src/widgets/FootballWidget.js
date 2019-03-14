@@ -35,19 +35,19 @@ class FootballWidget extends Component {
     render() {
         const { teams, league } = this.state;
         return (
-            <div>
+            <div className="col-md-4">
                 { teams.map(this.renderContent) }
-                    <div className="form-group col-md-2">
+                    <div className="form-group col-md-8">
                         <label>Choose a league</label>
                         <select 
                             className="form-control" 
                             id="selector" 
                             onChange={e => this.setState({ league: {...teams, league: e.target.value}})}>
-                            <option value="FL1">FL1</option>
-                            <option value="PL">PL</option>
-                            <option value="BL1">BL1</option>
-                            <option value="SA">SA</option>
-                            <option value="PD">PD</option>
+                            <option value="FL1">Ligue 1</option>
+                            <option value="PL">Premier League</option>
+                            <option value="BL1">BundesLiga</option>
+                            <option value="SA">Serie A</option>
+                            <option value="PD">Liga</option>
                         </select>
                     </div>
                     <button className="btn btn-primary" onClick={e => this.setLeague(e.target.value)}>Submit</button>

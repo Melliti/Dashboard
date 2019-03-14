@@ -14,10 +14,12 @@ class Nav extends Component {
         return (
             <div>
                 <nav className="navbar navbar-light bg-light">
-                    <a className="navbar-brand" href="/">
-                        <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
-                        <b>ASHBOARD</b>
-                    </a>
+                    <div className="container">
+                        <a className="navbar-brand" href="/">
+                            <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
+                            <b>ASHBOARD</b>
+                        </a>
+                    </div>
                 </nav>
             </div>
         )

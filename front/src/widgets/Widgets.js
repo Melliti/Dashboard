@@ -11,8 +11,10 @@ class Widgets extends Component {
 
     render() {
         return (
-            <div>
-                <FootballWidget />
+            <div className="container">
+                <div className="row">
+                    <FootballWidget />
+                </div>
             </div>
         );
     }
