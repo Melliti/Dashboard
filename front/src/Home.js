@@ -19,8 +19,11 @@ componentDidMount() {
           <Nav />
 
           <Router>
-            <Route path="/" component={Widgets} />
-            {/* <Route path="/login" component={Auth} /> */}
+            <div>
+              <Route exact path="/" component={Widgets} />
+              <Route path="/login" component={Auth} />
+
+            </div>
 
           </Router>
         </div>
