@@ -15,7 +15,6 @@ app.get('/teams', async (req, res) => {
 
 app.get('/teams/:id', async (req, res) => {
     const data = await footballTeams.makeRequest(req.params.id)
-    console.log(data)
     return res.json({
     data: data.teams
     });

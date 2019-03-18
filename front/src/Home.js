@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, /*Link*/ } from "react-router-dom";
 import Widgets from './widgets/Widgets';
 import Nav from './Nav'
+import Auth from './Auth'
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ componentDidMount() {
 
           <Router>
             <Route path="/" component={Widgets} />
+            {/* <Route path="/login" component={Auth} /> */}
 
           </Router>
         </div>

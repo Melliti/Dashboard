@@ -36,7 +36,7 @@ class FootballWidget extends Component {
     render() {
         const { teams } = this.state;
         return (
-            <div className="col-md-4 widget">
+            <div className="col-12 col-md-5 widget">
                 <div className="clubList">
                     { teams.map(this.renderContent) }
                 </div>
