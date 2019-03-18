@@ -1,4 +1,3 @@
-const request = require('request');
 const rp = require('request-promise')
 
 _URL_API = "http://api.football-data.org/v2/competitions/FL1/teams";
