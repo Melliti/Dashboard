@@ -31,7 +31,7 @@ class FootballWidget extends Component {
         .catch(err => console.error(err))
     }
 
-    renderContent = ({ id, crestUrl, shortName }) => <div key={id} className="clubInfo"><img src={crestUrl} alt="logo" className="clubLogo"/>{shortName}</div>
+    renderContent = ({ id, crestUrl, name }) => <div key={id} className="clubInfo"><img src={crestUrl} alt="logo" className="clubLogo"/>{name}</div>
 
     render() {
         const { teams } = this.state;
