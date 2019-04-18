@@ -62,3 +62,4 @@ typings/
 
 /back
 /server/node_modules
+/server/config
