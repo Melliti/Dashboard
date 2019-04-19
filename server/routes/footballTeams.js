@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const footballTeams = require('../widgets/footballWidget');
 
 router.get('/league', async (req, res) => {
     const data = await footballTeams.makeRequest("FL1")

@@ -15,7 +15,7 @@ class FootballWidget extends Component {
 
     getTeams = _ => {
         console.log("getteams")
-        fetch("http://localhost:4000/teams")
+        fetch("http://localhost:4000/teams/league")
         .then(response => response.json())
         .then(response => this.setState({ teams: response.data }))
         .catch(err => console.error(err))
@@ -25,7 +25,7 @@ class FootballWidget extends Component {
     {
         const { league } = this.state;
 
-        fetch("http://localhost:4000/teams/" + league.league)
+        fetch("http://localhost:4000/teams/league/" + league.league)
         .then(response => response.json())
         .then(response =>  this.setState({ teams: response.data }))
         .catch(err => console.error(err))
