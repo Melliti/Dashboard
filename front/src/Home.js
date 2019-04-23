@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, /*Link*/ } from "react-router-dom";
 import Widgets from './widgets/Widgets';
 import Nav from './Nav'
-import Auth from './Auth'
+import Auth from './authentication/Auth'
 
 class App extends Component {
 

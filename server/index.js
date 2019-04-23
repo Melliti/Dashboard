@@ -8,6 +8,7 @@ const app = express();
 
 // Config passport
 require('./config/passport-setup')(passport);
+
 // Config DB
 const db = require('./config/keys').MongoURI;
 
@@ -32,20 +33,8 @@ app.use(passport.session());
 
 app.use(cors());
 
+// Routing
 app.use('/teams', require('./routes/footballTeams'));
-// app.get('/teams', async (req, res) => {
-//     const data = await footballTeams.makeRequest("FL1")
-//     return res.json({
-//         data: data.teams
-//     });
-// });
-
-// app.get('/teams/:id', async (req, res) => {
-//     const data = await footballTeams.makeRequest(req.params.id)
-//     return res.json({
-//     data: data.teams
-//     });
-// });
 
 app.listen(4000, () => {
     console.log("Listening on port 4000");
