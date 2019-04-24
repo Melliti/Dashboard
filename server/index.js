@@ -35,6 +35,7 @@ app.use(cors());
 
 // Routing
 app.use('/teams', require('./routes/footballTeams'));
+app.use('/users', require('./routes/users'));
 
 app.listen(4000, () => {
     console.log("Listening on port 4000");

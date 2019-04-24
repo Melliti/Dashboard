@@ -10,7 +10,6 @@ class Login extends Component {
     }
 
     submitLogin(e) {
-
     }
 
     render() {

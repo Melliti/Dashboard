@@ -10,7 +10,6 @@ class Register extends Component {
     }
 
     submitRegister(e) {
-
     }
 
     render() {
@@ -40,9 +39,9 @@ class Register extends Component {
                                     <input className="form-control form-control-lg rounded-0" type="password" name="password" placeholder="Mot de passe" />
 
                                     <label htmlFor="password confirm">Confirmer mot de passe</label>
-                                    <input className="form-control form-control-lg rounded-0" type="password" name="password" placeholder="Retaper le mot de pass" />
+                                    <input className="form-control form-control-lg rounded-0" type="password" name="password" placeholder="Retaper le mot de passe" />
 
-                                    <button type="button" className="login-btn" onClick={this.submitRegister.bind(this)}>Login</button>
+                                    <button type="button" className="login-btn" onClick={this.submitRegister.bind(this)}>Register</button>
                                 </div>
 
                             </div>
